@@ -12,22 +12,24 @@ body {
 */
 
 .card {
-	width: 175px;
 	border: 2px solid black;
-	height: 175px;
-	padding: 5px;
+	height: 200px;
+	width: 175px;
+	padding: 0px 4px 0px 4px;
 	display: inline-block;
 	text-align: center;
 	margin: 5px;
 	box-sizing: border-box;
-	background-color: rgba(92,138,184,.2)
+	background-color: rgba(92,138,184,.2);
 }
 
 .card:hover {
-	border: 2px solid #5c8ab8;
+	/*border: 2px solid rgb(92,138,184);*/
+	background-color: rgba(92,138,184,.4);
 }
 
 .card img {
+	padding-top: 5px;
 	width: 100px;
 	height: 100px;
 	text-align: center;
@@ -45,13 +47,13 @@ body {
 #om {
 	/*color: #5cb85c;*/
 	/*color: #5c8ab8;*/
-	color: #5c5cb8;
+	color: rgb(92, 92, 184);
 }
 
 .jumbotron .h1, .jumbotron h1 {
  	font-weight: 900;
 	font-family: 'Bree Serif', serif;
-  color: #ccc;
+	color: rgba(92, 92, 184,.4)
 }
 
 .btn {

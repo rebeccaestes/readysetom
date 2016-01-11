@@ -26,9 +26,10 @@ ActiveRecord::Schema.define(version: 20160110202143) do
 
   create_table "sequences", force: :cascade do |t|
     t.string   "name"
+    t.boolean  "public"
+    t.integer  "asana_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "asana_id"
   end
 
 end
