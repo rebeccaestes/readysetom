@@ -5,8 +5,47 @@ body {
  	font-family: 'Droid Sans', serif;
 }
 
+/* COLORS
+	purple: #5c5cb8; / rgb(92, 92, 184)
+	green: #5cb85c; / rgb(92, 184 ,92)
+	blue: #5c8ab8; / rgb(92,138,184)
+*/
+
+.card {
+	width: 175px;
+	border: 2px solid black;
+	height: 175px;
+	padding: 5px;
+	display: inline-block;
+	text-align: center;
+	margin: 5px;
+	box-sizing: border-box;
+	background-color: rgba(92,138,184,.2)
+}
+
+.card:hover {
+	border: 2px solid #5c8ab8;
+}
+
+.card img {
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	position: relative;
+}
+
+.card .sanskrit {
+	font-weight: bold;
+}
+
+.card .english {
+	font-style: italic;
+}
+
 #om {
-	color: #5cb85c;
+	/*color: #5cb85c;*/
+	/*color: #5c8ab8;*/
+	color: #5c5cb8;
 }
 
 .jumbotron .h1, .jumbotron h1 {
@@ -15,12 +54,36 @@ body {
   color: #ccc;
 }
 
-.btn-default {
-	font-family: 'Arvo', serif;
+.btn {
+	font-family: 'Arvo', serif;    
+	color: #fff;
+  background-color: #5c8ab8;
+  border-color: #5c5cb8;
+}
+
+.btn-primary {
+	padding: 2px 4px 2px 4px;
+	margin-right: 5px;
+}
+
+.btn:hover {
+	/*background-color: #5c5cb8;*/
 }
 
 h2 {
 	font-family: 'Bree Serif', serif;
+}
+
+h3 {
+	display: inline;
+}
+
+.btn-learn {
+	font-family: inherit;
+	font-size: inherit;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	vertical-align: baseline;
 }
 
 .row {
@@ -31,6 +94,6 @@ h2 {
 }
 
 .header {
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
 }

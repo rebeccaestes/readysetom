@@ -1,1 +1,19 @@
-<div id="content"></div>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <div class="header container">
+    <h1>Ready Set <span id="om">OM</span></h1>
+ 		<h3>Create, save, and share unique yoga sequences.  
+ 			<a class="btn btn-lg btn-primary btn-learn" href="#" role="button">Learn more &raquo;</a>
+		</h3>
+  </div>
+</div>
+
+<div class="container">
+	<%= react_component('AsanasList',
+                    { initialAsanas: @asanas },
+                    { prerender: true }) %>
+</div>
+
+
+
+
