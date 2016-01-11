@@ -1,15 +1,36 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+ 	font-family: 'Droid Sans', serif;
+}
+
+#om {
+	color: #5cb85c;
+}
+
+.jumbotron .h1, .jumbotron h1 {
+ 	font-weight: 900;
+	font-family: 'Bree Serif', serif;
+  color: #ccc;
+}
+
+.btn-default {
+	font-family: 'Arvo', serif;
+}
+
+h2 {
+	font-family: 'Bree Serif', serif;
+}
+
+.row {
+}
+
+.col-md-4 {
+
+}
+
+.header {
+  padding-left: 10%;
+  padding-right: 10%;
+}
