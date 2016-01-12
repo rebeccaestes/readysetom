@@ -17,3 +17,9 @@
 // = require react_ujs
 // = require components
 // = require_tree .
+
+// var React = require('react')
+// var ReactForms = require('react-forms')
+// var Schema = ReactForms.schema.Schema
+// var Property = ReactForms.schema.Property
+// var Form = ReactForms.Form

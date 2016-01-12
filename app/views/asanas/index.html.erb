@@ -1,3 +1,9 @@
+<% if current_user %>
+<%= react_component('AsanasListUser') %>
+<% else %> 
+<%= react_component('AsanasListNoUser') %>
+<% end %>
+
 <%= react_component('AsanasList',
                     { initialAsanas: @asanas },
                     { prerender: true }) %>

@@ -6,7 +6,12 @@ class AsanasController < ApplicationController
 	end
 
 	def index
-		@asanas = Asana.all
+		@asanas = Asana.where(user: 1)
+
+		respond_to do |format|
+    	format.html { render :index }
+      format.json { render json: @asanas }
+    end
 	end
 
 	def new
@@ -16,13 +21,8 @@ class AsanasController < ApplicationController
 
 	def create
 		@current_user = current_user
-		@concert = Concert.create!(asana_params.merge(user: @current_user))
+		# @concert = Concert.create!(asana_params.merge(user: @current_user))
 		redirect_to yours_path(@current_user), notice: "Asana created."
-	end
-
-	def yours 
-		@current_user = User.find(params[:id])
-		@your_asanas = Asana.where(user: @current_user)
 	end
 
 	def edit
@@ -43,6 +43,16 @@ class AsanasController < ApplicationController
 	# 	@your_asana = Asana.new(@other_asana.attributes.merge(user: @current_user)
 	# 	redirect_to yours_path(@user), notice: "Asana saved."
 	# end
+
+	def show
+		@current_user = current_user
+		@your_asanas = Asana.where(user: @current_user)
+
+		respond_to do |format|
+    	format.html { render :show }
+      format.json { render json: @your_asanas }
+    end
+	end
 
 	def destroy
 		@current_user = current_user

@@ -430,3 +430,11 @@ asanas = Asana.create([
     }
 ])
 
+asanas = Asana.create([
+    {
+    sanskrit_name: "Sivasana!!",
+    english_name: "Rest :)",
+    img_url: "https://www.dropbox.com/s/d1dbdvo4l7xry4w/downdogflip.svg?raw=1",
+    user_id: 2
+    }
+])

@@ -9,13 +9,37 @@ var AsanasList = React.createClass({
       return <Asana key={asana.id} asana={asana} />;
     })
     return (
-      <div>
-        <div className="asanas">
-          {asanas}
-        </div>
+      <div className="asanas">
+        {asanas}
       </div>
+    );
+  },
+
+  test: function() {
+    return (
+      <p>Sign in or sign up to add your own asana.</p>
     );
   }
 
 });
+
+var AsanasListUser = React.createClass({
+
+   render: function() {
+    return (
+      <p><a href="/asanas/new">Create your own asana!</a></p>
+    );
+  }
+
+})
+
+var AsanasListNoUser = React.createClass({
+
+   render: function() {
+    return (
+      <p><a href="/users/sign_in">Sign in</a> or <a href="/users/sign_in">sign up</a> to add your own asana.</p>
+    );
+  }
+
+})
 

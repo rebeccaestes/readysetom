@@ -53,6 +53,11 @@ body {
 	color: white;
 }
 
+.navbar-header .btn {
+	/*position: relative;*/
+	margin-top: 8px;
+}
+
 #om {
 	/*color: #5cb85c;*/
 	/*color: #5c8ab8;*/
@@ -111,6 +116,7 @@ h3 {
 	top: 0;
 }
 
+
 .row {
 }
 
@@ -127,4 +133,14 @@ footer {
 .header {
   padding-left: 5%;
   padding-right: 5%;
+}
+
+p {
+	margin-left: 5%;
+	margin-right: 5%;
+	font-size: 16px;
+}
+
+.input-group-addon {
+	width: 200px;
 }
