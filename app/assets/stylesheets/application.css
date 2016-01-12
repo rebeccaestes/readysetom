@@ -29,11 +29,16 @@ body {
 }
 
 .card img {
-	padding-top: 5px;
+	padding-top: 15px;
 	width: 100px;
 	height: 100px;
 	text-align: center;
 	position: relative;
+}
+
+.header .container {
+	overflow: hidden;
+	height: 400px;
 }
 
 .card .sanskrit {
@@ -53,7 +58,12 @@ body {
 .jumbotron .h1, .jumbotron h1 {
  	font-weight: 900;
 	font-family: 'Bree Serif', serif;
-	color: rgba(92, 92, 184,.4)
+	color: rgba(92, 92, 184,.4);
+	float: left;
+  /*color: -webkit-linear-gradient(left, rgba(92, 92, 184,.4), rgba(92, 92, 184, 1)); /* For Safari 5.1 to 6.0 */*/
+  /*color: -o-linear-gradient(right, rgba(92, 92, 184,.4), rgba(92, 92, 184, 1)); /* For Opera 11.1 to 12.0 */*/
+  /*color: -moz-linear-gradient(right, rgba(92, 92, 184,.4), rgba(92, 92, 184, 1)); /* For Firefox 3.6 to 15 */*/
+  /*color: linear-gradient(to right, #5c8ab8, #5c5cb8); /* Standard syntax */*/
 }
 
 .btn {
@@ -69,7 +79,7 @@ body {
 }
 
 .btn:hover {
-	/*background-color: #5c5cb8;*/
+	color: rgba(92, 92, 184,.4);
 }
 
 h2 {
@@ -77,7 +87,8 @@ h2 {
 }
 
 h3 {
-	display: inline;
+	display: inline-block;
+	clear: both;
 }
 
 .btn-learn {
@@ -86,6 +97,13 @@ h3 {
 	padding-top: 0px;
 	padding-bottom: 0px;
 	vertical-align: baseline;
+}
+
+.om-img {
+	float: right;
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 
 .row {

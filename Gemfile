@@ -27,6 +27,8 @@ gem 'react-rails', '~> 1.5.0'
 
 gem 'react_component'
 
+gem 'devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
