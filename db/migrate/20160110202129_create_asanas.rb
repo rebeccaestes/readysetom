@@ -4,6 +4,7 @@ class CreateAsanas < ActiveRecord::Migration
     	t.string :sanskrit_name
     	t.string :english_name
     	t.string :img_url
+    	t.references "user"
       t.timestamps null: false
     end
   end

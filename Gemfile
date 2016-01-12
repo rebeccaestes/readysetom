@@ -29,6 +29,8 @@ gem 'react_component'
 
 gem 'devise'
 
+gem 'browserify-rails', '~> 0.9.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160112030445) do
+ActiveRecord::Schema.define(version: 20160112153105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,14 +20,25 @@ ActiveRecord::Schema.define(version: 20160112030445) do
     t.string   "sanskrit_name"
     t.string   "english_name"
     t.string   "img_url"
+    t.integer  "user_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
+  create_table "sequence_entries", force: :cascade do |t|
+    t.integer  "asana_id"
+    t.integer  "sequence_id"
+    t.integer  "order"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "sequence_entries", ["asana_id"], name: "index_sequence_entries_on_asana_id", using: :btree
+  add_index "sequence_entries", ["sequence_id"], name: "index_sequence_entries_on_sequence_id", using: :btree
+
   create_table "sequences", force: :cascade do |t|
     t.string   "name"
     t.boolean  "public"
-    t.integer  "asana_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -50,4 +61,6 @@ ActiveRecord::Schema.define(version: 20160112030445) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "sequence_entries", "asanas"
+  add_foreign_key "sequence_entries", "sequences"
 end

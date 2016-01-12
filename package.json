@@ -1,0 +1,12 @@
+
+{
+  "name": "a-package-name",
+  "devDependencies" : {
+    "browserify": "~9.0.8",
+    "browserify-incremental": "^3.0.0"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10"
+  }
+}
