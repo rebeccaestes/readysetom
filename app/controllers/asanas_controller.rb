@@ -1,10 +1,10 @@
 class AsanasController < ApplicationController
 
-	def index
+	def home
 		@asanas = Asana.all
 	end
 
-	def browse
+	def index
 		@asanas = Asana.all
 	end
 

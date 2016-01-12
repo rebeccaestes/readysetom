@@ -49,6 +49,10 @@ body {
 	font-style: italic;
 }
 
+.btn-success a {
+	color: white;
+}
+
 #om {
 	/*color: #5cb85c;*/
 	/*color: #5c8ab8;*/
@@ -60,6 +64,7 @@ body {
 	font-family: 'Bree Serif', serif;
 	color: rgba(92, 92, 184,.4);
 	float: left;
+	text-shadow: 1px 1px white;
   /*color: -webkit-linear-gradient(left, rgba(92, 92, 184,.4), rgba(92, 92, 184, 1)); /* For Safari 5.1 to 6.0 */*/
   /*color: -o-linear-gradient(right, rgba(92, 92, 184,.4), rgba(92, 92, 184, 1)); /* For Opera 11.1 to 12.0 */*/
   /*color: -moz-linear-gradient(right, rgba(92, 92, 184,.4), rgba(92, 92, 184, 1)); /* For Firefox 3.6 to 15 */*/
@@ -79,7 +84,7 @@ body {
 }
 
 .btn:hover {
-	color: rgba(92, 92, 184,.4);
+	color: white;
 }
 
 h2 {
@@ -111,6 +116,12 @@ h3 {
 
 .col-md-4 {
 
+}
+
+footer {
+	padding-left: 5%;
+	padding-right: 5%;
+	text-align: right;
 }
 
 .header {
