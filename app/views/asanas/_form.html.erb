@@ -1,0 +1,14 @@
+<%= form_for @asana do |f| %>
+
+	<p><%= f.label :sanskrit_name %>
+	<%= f.text_field :sanskrit_name %></p>
+
+	<p><%= f.label :english_name %>
+	<%= f.text_field :english_name %></p>
+
+	<p><%= f.label :image_URL %>
+	<%= f.text_field :img_url %></p>
+
+	<%= f.submit 'Create', class: 'enter' %>
+
+<% end %>

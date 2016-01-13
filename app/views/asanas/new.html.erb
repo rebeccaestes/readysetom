@@ -1,4 +1,10 @@
-<%= react_component('AsanaForm') %>
+<!-- <%= react_component('AsanaForm') %>
 
 <%= react_component('CreateAsana',
-                    { current_user: @current_user }  %>
+                    { current_user: @current_user },
+                    { prerender: true }) %>-->
+
+<div class="container">
+<h2>Add an asana</h2>
+<div id="new_form"><%= render partial: "form" %></div>
+</div>

@@ -16,6 +16,33 @@ var AsanasList = React.createClass({
   },
 
   test: function() {
+    console.log(asanas)
+    return (
+      <p>Sign in or sign up to add your own asana.</p>
+    );
+  }
+
+});
+
+var YourAsanasList = React.createClass({
+
+  getInitialState: function() {
+      return { asanas: this.props.initialAsanas };
+  },
+
+  render: function() {
+    var asanas = this.state.asanas.map(function(asana) {
+      return <YourAsana key={asana.id} asana={asana} />;
+    })
+    return (
+      <div className="asanas">
+        {asanas}
+      </div>
+    );
+  },
+
+  test: function() {
+    console.log(asanas)
     return (
       <p>Sign in or sign up to add your own asana.</p>
     );
@@ -24,7 +51,6 @@ var AsanasList = React.createClass({
 });
 
 var AsanasListUser = React.createClass({
-
    render: function() {
     return (
       <p><a href="/asanas/new">Create your own asana!</a></p>

@@ -11,7 +11,7 @@ body {
 	blue: #5c8ab8; / rgb(92,138,184)
 */
 
-.card {
+.asana-card {
 	border: 2px solid black;
 	height: 200px;
 	width: 175px;
@@ -23,12 +23,12 @@ body {
 	background-color: rgba(92,138,184,.2);
 }
 
-.card:hover {
+.asana-card:hover {
 	/*border: 2px solid rgb(92,138,184);*/
 	background-color: rgba(92,138,184,.4);
 }
 
-.card img {
+.asana-card img {
 	padding-top: 15px;
 	width: 100px;
 	height: 100px;
@@ -41,11 +41,11 @@ body {
 	height: 400px;
 }
 
-.card .sanskrit {
+.asana-card .sanskrit {
 	font-weight: bold;
 }
 
-.card .english {
+.asana-card .english {
 	font-style: italic;
 }
 
@@ -139,6 +139,15 @@ p {
 	margin-left: 5%;
 	margin-right: 5%;
 	font-size: 16px;
+}
+
+
+#new_form p {
+	margin-left: 0;
+}
+
+#new_form label {
+	width: 125px;
 }
 
 .input-group-addon {

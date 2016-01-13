@@ -10,7 +10,7 @@ class AsanasController < ApplicationController
 
 		respond_to do |format|
     	format.html { render :index }
-      format.json { render json: @asanas }
+      format.json { render json: @asanas.to_json }
     end
 	end
 
@@ -21,8 +21,8 @@ class AsanasController < ApplicationController
 
 	def create
 		@current_user = current_user
-		# @concert = Concert.create!(asana_params.merge(user: @current_user))
-		redirect_to yours_path(@current_user), notice: "Asana created."
+		@asana = Asana.create!(asana_params.merge(user: @current_user))
+		redirect_to root_path, notice: "Asana created."
 	end
 
 	def edit
@@ -30,11 +30,21 @@ class AsanasController < ApplicationController
 		@owner = @asana.user
 	end
 
+	def your_asanas
+		@current_user = current_user
+		@your_asanas = Asana.where(user: @current_user)
+
+		respond_to do |format|
+    	format.html { render :show }
+      format.json { render json: @your_asanas.to_json }
+    end
+	end
+
 	def update
 		@current_user = current_user
 		@asana = Asana.find(params[:id])
 		@asana.update(asana_params.merge(user: @current_user))
-		redirect_to yours_path(@current_user), notice: "Asana updated."
+		redirect_to your_asanas_path, notice: "Asana updated."
 	end
 
 	# def copy
@@ -45,13 +55,15 @@ class AsanasController < ApplicationController
 	# end
 
 	def show
+		@asana = Asana.find(params[:id])
+		@owner = @asana.user
 		@current_user = current_user
-		@your_asanas = Asana.where(user: @current_user)
+		# @your_asanas = Asana.where(user: @current_user)
 
-		respond_to do |format|
-    	format.html { render :show }
-      format.json { render json: @your_asanas }
-    end
+		# respond_to do |format|
+  #   	format.html { render :show }
+  #     format.json { render json: @your_asanas.to_json }
+    # end
 	end
 
 	def destroy
@@ -59,7 +71,16 @@ class AsanasController < ApplicationController
 		@asana = Asana.find(params[:id])
 		@asana.destroy
 		# @concert.attendances.destroy_all
-		redirect_to yours_path(@current_user), notice: "Concert deleted!"
+		redirect_to show_path(@current_user), notice: "Concert deleted!"
+	end
+
+	private
+	def asana_params
+		params.require(:asana).permit(
+			:sanskrit_name,
+			:english_name,
+			:image_url,
+			:user_id )
 	end
 
 end

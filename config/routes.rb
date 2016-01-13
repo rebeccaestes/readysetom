@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   root to: 'asanas#home'
   resources :asanas
 
+  get '/your_asanas', to: 'asanas#your_asanas'
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
