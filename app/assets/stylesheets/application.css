@@ -11,6 +11,11 @@ body {
 	blue: #5c8ab8; / rgb(92,138,184)
 */
 
+.delete {
+	margin-top: 20px;
+	background-color: red;
+}
+
 .asana-card {
 	border: 2px solid black;
 	height: 200px;
@@ -23,9 +28,22 @@ body {
 	background-color: rgba(92,138,184,.2);
 }
 
-.asana-card:hover {
+h5 {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+p.notifs {
+	margin-left: 10%;
+}
+
+.your-asana-card:hover {
 	/*border: 2px solid rgb(92,138,184);*/
 	background-color: rgba(92,138,184,.4);
+}
+
+..your-asana-card:hover:after {
+	/*border: 2px solid rgb(92,138,184);*/
 }
 
 .asana-card img {
@@ -141,6 +159,15 @@ p {
 	font-size: 16px;
 }
 
+.list-top {
+	margin-top: 25px;
+	margin-left: 5%;
+}
+
+h4 {
+	margin-left: 10%;
+	margin-top: 40px;
+}
 
 #new_form p {
 	margin-left: 0;

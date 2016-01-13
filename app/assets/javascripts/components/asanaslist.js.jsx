@@ -15,19 +15,29 @@ var AsanasList = React.createClass({
     );
   },
 
-  test: function() {
-    console.log(asanas)
-    return (
-      <p>Sign in or sign up to add your own asana.</p>
-    );
-  }
-
 });
 
 var YourAsanasList = React.createClass({
 
   getInitialState: function() {
-      return { asanas: this.props.initialAsanas };
+      return { 
+        asanas: this.props.initialAsanas,
+        asanaHovered: false
+       };
+  },
+
+  handleHover: function() {
+    $(".asana-card").hover(function() {
+      cardText = $(this).find(".card-text").html();
+      $(this).find(".card-text").html("<h5>Edit</h5>").fadeIn();
+    }, function() {
+      $(this).find(".card-text").fadeIn().html(cardText);
+    })
+
+  },
+
+  componentDidMount: function() {
+    this.handleHover();
   },
 
   render: function() {
@@ -35,25 +45,20 @@ var YourAsanasList = React.createClass({
       return <YourAsana key={asana.id} asana={asana} />;
     })
     return (
-      <div className="asanas">
-        {asanas}
+      <div><h4 className="list-top"><a href="/asanas/new">Create a new asana</a> or <a href="/asanas">go back to official app asanas ...</a></h4>
+        <div className="asanas">
+          {asanas}
+        </div>
       </div>
     );
   },
-
-  test: function() {
-    console.log(asanas)
-    return (
-      <p>Sign in or sign up to add your own asana.</p>
-    );
-  }
 
 });
 
 var AsanasListUser = React.createClass({
    render: function() {
     return (
-      <p><a href="/asanas/new">Create your own asana!</a></p>
+      <h4 className="list-top"><a href="/your_asanas">View your own asanas</a></h4>
     );
   }
 
@@ -63,7 +68,7 @@ var AsanasListNoUser = React.createClass({
 
    render: function() {
     return (
-      <p><a href="/users/sign_in">Sign in</a> or <a href="/users/sign_in">sign up</a> to add your own asana.</p>
+      <h4 className="list-top"><a href="/users/sign_in">Sign in</a> or <a href="/users/sign_in">sign up</a> to create your own asana.</h4>
     );
   }
 

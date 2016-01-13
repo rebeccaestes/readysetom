@@ -1,4 +1,9 @@
-<p>Click an asana to edit it.</p>
+                    		  <% if notice || alert %>
+		   	<p class="notifs">
+					<div class="notice"><%= notice %></div>
+      		<div class="alert"><%= alert %></div>
+      	</p>
+      <% end %>
 
 <%= react_component('YourAsanasList',
                     { initialAsanas: @your_asanas },

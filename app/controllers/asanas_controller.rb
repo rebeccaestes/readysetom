@@ -1,11 +1,22 @@
 class AsanasController < ApplicationController
 
+	def your_asanas
+		@current_user = current_user
+		@your_asanas = Asana.where(user: @current_user)
+
+		respond_to do |format|
+    	format.html { render :your_asanas }
+      format.json { render json: @your_asanas.to_json }
+    end
+	end
+
 	def home
 		@asanas = Asana.all
 		@current_user = current_user
 	end
 
 	def index
+		@current_user = current_user
 		@asanas = Asana.where(user: 1)
 
 		respond_to do |format|
@@ -22,22 +33,12 @@ class AsanasController < ApplicationController
 	def create
 		@current_user = current_user
 		@asana = Asana.create!(asana_params.merge(user: @current_user))
-		redirect_to root_path, notice: "Asana created."
+		redirect_to your_asanas_path, notice: "Asana created."
 	end
 
 	def edit
 		@asana = Asana.find(params[:id])
 		@owner = @asana.user
-	end
-
-	def your_asanas
-		@current_user = current_user
-		@your_asanas = Asana.where(user: @current_user)
-
-		respond_to do |format|
-    	format.html { render :show }
-      format.json { render json: @your_asanas.to_json }
-    end
 	end
 
 	def update
@@ -63,15 +64,14 @@ class AsanasController < ApplicationController
 		# respond_to do |format|
   #   	format.html { render :show }
   #     format.json { render json: @your_asanas.to_json }
-    # end
+  #   end
 	end
 
 	def destroy
 		@current_user = current_user
 		@asana = Asana.find(params[:id])
 		@asana.destroy
-		# @concert.attendances.destroy_all
-		redirect_to show_path(@current_user), notice: "Concert deleted!"
+		redirect_to your_asanas_path, notice: "Asana deleted!"
 	end
 
 	private

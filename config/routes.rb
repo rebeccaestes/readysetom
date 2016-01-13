@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   root to: 'asanas#home'
   resources :asanas
 
-  get '/your_asanas', to: 'asanas#your_asanas'
+  get 'asanas/your_asanas', to: 'asanas#your_asanas'
+  get 'your_asanas', to: 'asanas#your_asanas'
 
 
 

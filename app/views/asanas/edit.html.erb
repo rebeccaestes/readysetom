@@ -2,3 +2,7 @@
 <h2>Edit an asana</h2>
 <div id="new_form"><%= render partial: "form" %></div>
 </div>
+
+<%= form_for @asana, method: :delete do |f| %>
+	<%= f.submit 'Delete!', class: 'delete' %>
+<% end %>

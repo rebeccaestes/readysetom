@@ -9,6 +9,13 @@
 		   <!--<%= image_tag("om_calligraphy.svg", :alt => "om", :class => "om_img") %>-->
 
   </div>
+
+  		  <% if notice || alert %>
+		   	<div id="notifs">
+					<p class="notice"><%= notice %></p>
+      		<p class="alert"><%= alert %></p>
+      	</div>
+      <% end %>
 </div>
 
 
