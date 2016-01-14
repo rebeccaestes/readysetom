@@ -71,13 +71,12 @@ a:hover {
 	position: relative;
 }
 
-.header .container {
-	overflow: hidden;
-	height: 400px;
-}
-
 .asana-card .sanskrit {
 	font-weight: bold;
+}
+
+.nav_buttons_menu {
+	float: right;
 }
 
 .asana-card .english {
@@ -93,10 +92,19 @@ a:hover {
 	margin-top: 8px;
 }
 
+.navbar-header {
+	width: 100%;
+}
+
 #om {
 	/*color: #5cb85c;*/
 	/*color: #5c8ab8;*/
 	color: rgb(92, 92, 184);
+}
+
+.jumbotron .container {
+	position: relative;
+	padding-right: 30%;
 }
 
 .jumbotron .h1, .jumbotron h1 {
@@ -144,11 +152,12 @@ h3 {
 	vertical-align: baseline;
 }
 
-.om-img {
-	float: right;
-	position: absolute;
-	left: 0;
-	top: 0;
+.om_img {
+  top: 5%;
+  position: absolute;
+  right: 0;
+  width: 30%;
+
 }
 
 

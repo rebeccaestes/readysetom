@@ -10,8 +10,6 @@ class SequencesController < ApplicationController
 		@sequence = Sequence.find(params[:id])
 		@asanas = Asana.all
     @asanas_in_seq = @sequence.asanas
-    puts "COFFEEEEEE!"
-    puts @asanas_in_seq.as_json
 	end
 
   def new

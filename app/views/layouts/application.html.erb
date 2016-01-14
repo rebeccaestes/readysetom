@@ -2,11 +2,10 @@
 <html>
 <head>
   <title>Ready Set OM</title>
+    <%= stylesheet_link_tag 'bootstrap.min.css', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag 'bootstrap.min.css', media: 'all', 'data-turbolinks-track' => true %>
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
   <%= javascript_include_tag 'bootstrap.min.js', 'data-turbolinks-track' => true %>
 
   <%= csrf_meta_tags %>
@@ -21,20 +20,20 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+<!--           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </button>
+          </button> -->
           <% if current_user %>
             <a class="navbar-brand" href="/">Namaste, <%= current_user.email %>!</a>
             <button class="btn btn-success"><%= link_to 'sign out', destroy_user_session_path, :method => :delete %></button>
+            <span class="nav_buttons_menu">
+              <a href="/sequences" class="btn btn-success">Sequences</a>
+              <a href="/asanas" class="btn btn-success">Asanas</a>
+              </span>
             </div>
-                        <form class="navbar-form navbar-right">
-              <button class="btn btn-success"><a href="/sequences">Sequences</a></button>
-              <button class="btn btn-success"><a href="/asanas">Asanas</a></button>
-              </form>  
           <% else %>
             <a class="navbar-brand" href="/">Namaste!</a>
             <!-- </div> -->

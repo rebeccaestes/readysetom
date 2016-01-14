@@ -38,7 +38,7 @@ var SequenceSelector = React.createClass({
     //   $(this).css("background", "grey");
     //   console.log(addedAsanas);
     // })
-},
+  },
 
 
 
