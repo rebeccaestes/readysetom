@@ -1,0 +1,12 @@
+<h2>
+  Sequences
+  <%= link_to "(+)", new_sequence_path %>
+</h2>
+
+<ul>
+  <% @sequences.each do |sequence| %>
+    <li>
+      <%= link_to sequence.name, sequence %>
+    </li>
+  <% end %>
+</ul>

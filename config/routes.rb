@@ -2,9 +2,17 @@ Rails.application.routes.draw do
 
   devise_for :users
   root to: 'asanas#home'
+
+  resources :sequences, except: [:edit, :update] do 
+    member do
+      post 'add_asana'
+      post 'remove_asana'
+    end
+  end
+
   resources :asanas
 
-  get 'asanas/your_asanas', to: 'asanas#your_asanas'
+  # get 'asanas/your_asanas', to: 'asanas#your_asanas'
   get 'your_asanas', to: 'asanas#your_asanas'
 
 
