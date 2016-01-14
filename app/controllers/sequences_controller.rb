@@ -43,7 +43,7 @@ class SequencesController < ApplicationController
 
   def remove_asana
     @sequence = Sequence.find(params[:id])
-    entries = @sequence.sequence_entries.where(asana_id: params[:asana_id]).destroy_all
+    entries = @sequence.sequence_entries.find_by(asana_id: params[:asana_id]).destroy
     redirect_to @sequence
   end
 

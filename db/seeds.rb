@@ -99,6 +99,15 @@ asanas = Asana.create([
 
 asanas = Asana.create([
     {
+    sanskrit_name: "Sivasana",
+    english_name: "Corpse",
+    img_url: "https://www.dropbox.com/s/eohyx2crvtjvaxb/sivasana.svg?raw=1",
+    user_id: 1
+    }
+])
+
+asanas = Asana.create([
+    {
     sanskrit_name: "Alanasana",
     english_name: "Crescent Lunge",
     img_url: "https://www.dropbox.com/s/1oc1dqv8mfwo8uj/highlunge.svg?raw=1",
@@ -427,14 +436,5 @@ asanas = Asana.create([
     english_name: "Wild Thing",
     img_url: "https://www.dropbox.com/s/d1dbdvo4l7xry4w/downdogflip.svg?raw=1",
     user_id: 1
-    }
-])
-
-asanas = Asana.create([
-    {
-    sanskrit_name: "Sivasana!!",
-    english_name: "Rest :)",
-    img_url: "https://www.dropbox.com/s/d1dbdvo4l7xry4w/downdogflip.svg?raw=1",
-    user_id: 2
     }
 ])

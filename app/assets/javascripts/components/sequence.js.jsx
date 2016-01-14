@@ -2,7 +2,7 @@ var Sequence = React.createClass({
 
     getInitialState: function() {
         return {
-            asanas: this.props.initialAsanas,
+          asanas: this.props.initialAsanas,
         }
     },
 
@@ -60,14 +60,32 @@ var SequenceSelector = React.createClass({
 
 var SequenceSorter = React.createClass({
 
+  getInitialState: function() {
+    return {
+      seqAsanas: this.props.initialAsanas,
+    }
+  },
+
+
   componentDidMount: function() {
-    $( ".asanas" ).sortable();
-    $( ".asanas" ).sortable( "enable");
+    $( "#sequence_asanas" ).sortable();
+    // var sortedAsanas = $( "#sequence_asanas" ).sortable( "toArray" )
+    // console.log(sortedAsanas)
+
+    // var lengthOfSeq = $("#sequence_asanas").find(".sanskrit").length;
+    // var asanaOrder = []
+    // $("#save_order").on("click", function() {
+    //   for (var i = 0; i < lengthOfSeq; i++) {
+    //     asanaOrder.push($("#sequence_asanas").find(".sanskrit").eq(i).text());
+    //   }
+    //   console.log(asanaOrder);  
+    // })
+    // return asanaOrder;
 
   },
 
   render: function() {
-    return <div> Drag and drop </div>
+    return <p> Drag and drop the asanas to reorder them.</p>
   }
 
 })
