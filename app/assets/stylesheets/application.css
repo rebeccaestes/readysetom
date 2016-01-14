@@ -26,6 +26,7 @@ body {
 	margin: 5px;
 	box-sizing: border-box;
 	background-color: rgba(92,138,184,.2);
+	vertical-align: top;
 }
 
 #yield {
@@ -48,8 +49,18 @@ p.notifs {
 	background-color: rgba(92,138,184,.4);
 }
 
-..your-asana-card:hover:after {
-	/*border: 2px solid rgb(92,138,184);*/
+a:hover {
+	text-decoration: none;
+}
+
+.your-asana-card .helper {
+	display: none;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.your-asana-card:hover .helper {
+	display: block;
 }
 
 .asana-card img {

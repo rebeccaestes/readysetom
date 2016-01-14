@@ -31,22 +31,17 @@
             <a class="navbar-brand" href="/">Namaste, <%= current_user.email %>!</a>
             <button class="btn btn-success"><%= link_to 'sign out', destroy_user_session_path, :method => :delete %></button>
             </div>
+                        <form class="navbar-form navbar-right">
+              <button class="btn btn-success"><a href="/sequences">Sequences</a></button>
+              <button class="btn btn-success"><a href="/asanas">Asanas</a></button>
+              </form>  
           <% else %>
             <a class="navbar-brand" href="/">Namaste!</a>
             <!-- </div> -->
             <!-- <div id="navbar" class="navbar-collapse collapse"> -->
             <button class="btn btn-success"><%= link_to 'sign up', new_user_registration_path %></button>
             <button class="btn btn-success"><%= link_to 'log in', new_user_session_path %></button>
-          </div>
-            <form class="navbar-form navbar-right">
-              <div class="form-group">
-                <input type="text" placeholder="Email" class="form-control">
-              </div>
-              <div class="form-group">
-                <input type="password" placeholder="Password" class="form-control">
-              </div>
-              <button type="submit" class="btn btn-success">Sign in</button>
-            </form>
+          </div>            
             <% end %>
         </div><!--/.navbar-collapse -->
       </div>
@@ -58,9 +53,9 @@
 
 
 
-  <div id="yield">
+ 
     <%= yield %>
-  </div>
+
 
 
       <hr>

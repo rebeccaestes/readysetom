@@ -20,21 +20,11 @@ var AsanasList = React.createClass({
 var YourAsanasList = React.createClass({
 
   getInitialState: function() {
-      return { 
-        asanas: this.props.initialAsanas,
-        asanaHovered: false
-       };
+    return { 
+      asanas: this.props.initialAsanas,
+     };
   },
 
-  handleHover: function() {
-    $(".asana-card").hover(function() {
-      cardText = $(this).find(".card-text").html();
-      $(this).find(".card-text").html("<h5>Edit</h5>").fadeIn();
-    }, function() {
-      $(this).find(".card-text").fadeIn().html(cardText);
-    })
-
-  },
 
   componentDidMount: function() {
     this.handleHover();

@@ -29,6 +29,7 @@ var YourAsana = React.createClass({
                 <div className="card-text" id={this.props.asana.id}>
             		<div className="sanskrit">{this.props.asana.sanskrit_name}</div>
             		<div className="english">{this.props.asana.english_name}</div>
+                    <span className="helper">Edit</span>
                 </div>
                 </a>
             </div>

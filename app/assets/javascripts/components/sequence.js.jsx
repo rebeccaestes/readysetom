@@ -2,7 +2,7 @@ var Sequence = React.createClass({
 
     getInitialState: function() {
         return {
-            
+            asanas: this.props.initialAsanas,
         }
     },
 
@@ -24,7 +24,6 @@ var SequenceSelector = React.createClass({
   getInitialState: function() {
       return { 
         asanas: this.props.initialAsanas,
-        asanasInSeq: this.props.seqAsanas,
       };
   },
 
@@ -32,14 +31,13 @@ var SequenceSelector = React.createClass({
     var addedAsanas = []
     var self = $(this);
     console.log(this)
-    $(".asana-card").click(function() {
-      var sanskritName = $(this).find(".sanskrit").text();
-      addedAsanas.push(sanskritName);
-      // $(this).find(".card-text").html("<h5>Added!</h5>").fadeIn();
-      $(this).css("background", "grey");
-      console.log(addedAsanas);
-    })
-    this.getInitialState();
+    // $(".asana-card").click(function() {
+    //   var sanskritName = $(this).find(".sanskrit").text();
+    //   addedAsanas.push(sanskritName);
+    //   // $(this).find(".card-text").html("<h5>Added!</h5>").fadeIn();
+    //   $(this).css("background", "grey");
+    //   console.log(addedAsanas);
+    // })
 },
 
 
@@ -55,7 +53,6 @@ var SequenceSelector = React.createClass({
 
     return (
       <div className="asanas">
-        {seqAsanas}
         {asanas}
       </div>
     );
