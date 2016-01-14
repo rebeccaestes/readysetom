@@ -6,6 +6,8 @@
                     { initialAsanas: @asanas_in_seq},
                     { prerender: true }) %>
 
+<%= react_component('SequenceSorter') %>
+
 
 <ul>
   <% @sequence.asanas.each do |asana| %>

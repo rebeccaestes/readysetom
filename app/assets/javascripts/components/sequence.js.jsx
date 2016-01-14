@@ -40,8 +40,6 @@ var SequenceSelector = React.createClass({
     // })
   },
 
-
-
   componentDidMount: function() {
     this.addAsana()
   },
@@ -57,5 +55,19 @@ var SequenceSelector = React.createClass({
       </div>
     );
   },
+
+})
+
+var SequenceSorter = React.createClass({
+
+  componentDidMount: function() {
+    $( ".asanas" ).sortable();
+    $( ".asanas" ).sortable( "enable");
+
+  },
+
+  render: function() {
+    return <div> Drag and drop </div>
+  }
 
 })
