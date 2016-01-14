@@ -11,11 +11,6 @@ body {
 	blue: #5c8ab8; / rgb(92,138,184)
 */
 
-.delete {
-	margin-top: 20px;
-	background-color: red;
-}
-
 .asana-card {
 	border: 2px solid black;
 	height: 200px;
@@ -39,10 +34,31 @@ h5 {
 	font-size: 20px;
 }
 
-p.notifs {
-	margin-left: 10%;
+#notifs {
+	font-size: 12px;
+	font-style: italic;
+	margin-top: 25px;
 }
-/* why????? */
+
+.edit_asana .enter {
+	color: white;
+	background-color: #5c8ab8;
+  border-color: #5c5cb8;
+  padding: 5px;
+  border-radius: 5px;
+  width: 75px;
+}
+
+.delete {
+	margin-top: 10px;
+	background-color: darkred;
+  border-color: #5c5cb8;
+  padding: 5px;
+  border-radius: 5px;
+  width: 75px;
+  color: white;
+}
+
 
 .your-asana-card:hover {
 	/*border: 2px solid rgb(92,138,184);*/
@@ -99,12 +115,12 @@ a:hover {
 #om {
 	/*color: #5cb85c;*/
 	/*color: #5c8ab8;*/
-	color: rgb(92, 92, 184);
+	/*color: rgb(92, 92, 184);*/
 }
 
 .jumbotron .container {
 	position: relative;
-	padding-right: 30%;
+	padding-right: 32%;
 }
 
 .jumbotron .h1, .jumbotron h1 {
@@ -153,11 +169,11 @@ h3 {
 }
 
 .om_img {
-  top: 5%;
+  top: 0;
   position: absolute;
-  right: 0;
+  right: 2%;
   width: 30%;
-
+  max-height: 250px;
 }
 
 
