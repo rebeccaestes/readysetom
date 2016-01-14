@@ -50,8 +50,11 @@ var SequenceSelector = React.createClass({
     })
 
     return (
-      <div className="asanas">
-        {asanas}
+      <div>
+        <h3>Asana Reference</h3>
+        <div className="asanas">
+          {asanas}
+        </div>
       </div>
     );
   },
