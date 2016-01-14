@@ -1,20 +1,20 @@
 <div class="container">
 
-  <h2><%= @sequence.name %></h2>
-
-  <h3>Asanas</h3>
+  <h2 id="sequence_header"><%= @sequence.name %> Sequence</h2>
 
   <%= react_component('SequenceSorter') %>
 
   <div id="sequence_asanas">
 
     <% @asanas_in_seq.each do |asana| %>
-      <div class="asana-card">
+      <div class="asana-card your-asana-card">
         <%= image_tag asana.img_url, alt:"#{asana.sanskrit_name}" %>
           <div class="card-text">
             <div class="sanskrit"><%= "#{asana.sanskrit_name}" %></div>
             <div class="english"><%= "#{asana.english_name}" %></div>
-            <div class="delete_asana">        <%= link_to "(x)", remove_asana_sequence_path(@sequence, asana_id: asana.id), method: :post %></div>
+            <div class="helper delete_from_seq">        
+              <%= link_to "(x)", remove_asana_sequence_path(@sequence, asana_id: asana.id), method: :post %>
+            </div>
 
           </div>
         </div>
@@ -43,8 +43,19 @@
   </fieldset>
 
   <hr />
-  <%= react_component('SequenceSelector',
-                      { initialAsanas: @asanas},
-                      { prerender: true }) %>
+
+    <% @asanas.each do |asana| %>
+      <div class="asana-card">
+        <%= image_tag asana.img_url, alt:"#{asana.sanskrit_name}" %>
+          <div class="card-text">
+            <div class="sanskrit"><%= "#{asana.sanskrit_name}" %></div>
+            <div class="english"><%= "#{asana.english_name}" %></div>
+            <div class="helper delete_from_seq">        
+              <%= link_to "(x)", remove_asana_sequence_path(@sequence, asana_id: asana.id), method: :post %>
+            </div>
+
+          </div>
+        </div>
+    <% end %>
 
 </div>

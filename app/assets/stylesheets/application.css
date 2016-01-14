@@ -180,19 +180,21 @@ footer {
 }
 
 p {
-	margin-left: 5%;
-	margin-right: 5%;
 	font-size: 16px;
 }
 
 .list-top {
 	margin-top: 25px;
-	margin-left: 5%;
 }
 
 h4 {
-	margin-left: 10%;
+	/*margin-left: 10%;*/
 	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+#sequence_header {
+	margin-bottom: 20px;
 }
 
 #new_form p {
@@ -205,4 +207,8 @@ h4 {
 
 .input-group-addon {
 	width: 200px;
+}
+
+.card-text .delete_from_seq {
+	color: red;
 }

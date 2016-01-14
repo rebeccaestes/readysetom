@@ -48,7 +48,7 @@ var YourAsanasList = React.createClass({
 var AsanasListUser = React.createClass({
    render: function() {
     return (
-      <h4 className="list-top"><a href="/your_asanas">View your own asanas</a></h4>
+      <h4 className="list-top">These are the standard app asanas. You can also <a href="/your_asanas">make and view your own</a>!</h4>
     );
   }
 
