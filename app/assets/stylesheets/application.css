@@ -41,7 +41,7 @@ body {
 .jumbotron h1 {
  	font-weight: 900;
 	font-family: 'Bree Serif', serif;
-	color: rgba(92, 92, 184, 2000.4);
+	color: rgba(92, 92, 184, .4);
 	float: left;
 	text-shadow: 1px 1px white;
 }
