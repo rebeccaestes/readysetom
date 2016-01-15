@@ -1,5 +1,0 @@
-<%= form_for @sequence do |f| %>
-	<%= f.label :asana %>
-    <%= f.select(:asana_id, options_for_select(Asana.where(user: 1).map{|a| ["#{a.sanskrit_name}", a.id]})) %>
-    <%= f.submit 'add_asana', class: 'enter' %>
-  <% end %>

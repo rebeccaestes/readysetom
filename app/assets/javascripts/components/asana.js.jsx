@@ -1,3 +1,4 @@
+// Generate single asana
 var Asana = React.createClass({
     render: function() {
         return (
@@ -12,8 +13,10 @@ var Asana = React.createClass({
     }
 });
 
+// Generate single user-created asana
 var YourAsana = React.createClass({
 
+    // create URL for editing asana
     getInitialState: function() {
         return {
             editLink: "/asanas/" + this.props.asana.id
@@ -21,7 +24,7 @@ var YourAsana = React.createClass({
     },
 
     render: function() {
-
+        // (Asana.render plus with additional enclosing class, edit button, and link)
         return (
             <div className="your-asana-card asana-card">
                 <a href={this.state.editLink}>
@@ -34,9 +37,6 @@ var YourAsana = React.createClass({
                 </a>
             </div>
         );
-    },
-
-    componentDidMount: function() {
-
     }
+
 });

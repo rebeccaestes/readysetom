@@ -36,11 +36,6 @@ class AsanasController < ApplicationController
 		redirect_to your_asanas_path, notice: "Asana created."
 	end
 
-	def edit
-		@asana = Asana.find(params[:id])
-		@owner = @asana.user
-	end
-
 	def update
 		@current_user = current_user
 		@asana = Asana.find(params[:id])
@@ -48,23 +43,10 @@ class AsanasController < ApplicationController
 		redirect_to your_asanas_path, notice: "Asana updated."
 	end
 
-	# def copy
-	# 	@current_user = current_user
-	# 	@other_asana = Asana.find(params[:id])
-	# 	@your_asana = Asana.new(@other_asana.attributes.merge(user: @current_user)
-	# 	redirect_to yours_path(@user), notice: "Asana saved."
-	# end
-
 	def show
 		@asana = Asana.find(params[:id])
 		@owner = @asana.user
 		@current_user = current_user
-		# @your_asanas = Asana.where(user: @current_user)
-
-		# respond_to do |format|
-  #   	format.html { render :show }
-  #     format.json { render json: @your_asanas.to_json }
-  #   end
 	end
 
 	def destroy

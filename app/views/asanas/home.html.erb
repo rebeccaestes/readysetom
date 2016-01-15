@@ -1,23 +1,20 @@
-    <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
   <div class="header container">
     <h1>Ready Set <span id="om">OM</span></h1>  			
  		<h3>Create, save, and share unique yoga sequences. </h3>
-    <h3><% if current_user %>
-      <a href="/sequences" class="btn btn-lg btn-primary btn-learn">Get started &raquo;</a>
-    <% else %>
- 			 <a href="/sequences" class="btn btn-lg btn-primary btn-learn">Sign up to get started!</a>
-    <% end %>
+
+    <h3>
+      <% if current_user %>
+      <div class="notifs">
+        <a href="/sequences" class="btn btn-lg btn-primary btn-learn">Get started &raquo;</a>
+      <% else %>
+   			 <a href="/sequences" class="btn btn-lg btn-primary btn-learn">Sign up to get started!</a>
+      </div>
+      <% end %>
     </h3>
 		
 		   <%= image_tag("om_calligraphy.svg", :alt => "om", :class => "om_img") %>
 
-        <% if notice || alert %>
-        <div id="notifs">
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
-        </div>
-      <% end %>
   </div>
 
   </div>

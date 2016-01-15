@@ -22,8 +22,6 @@
 
   </div>
 
-    <!-- <button class="btn btn-success" id="save_order">Save Order</button> -->
-
   <fieldset>
     <h3>Add from App Asanas</h3>
     <%= form_tag(add_asana_sequence_path(@sequence)) do %>
@@ -44,18 +42,8 @@
 
   <hr />
 
-    <% @asanas.each do |asana| %>
-      <div class="asana-card">
-        <%= image_tag asana.img_url, alt:"#{asana.sanskrit_name}" %>
-          <div class="card-text">
-            <div class="sanskrit"><%= "#{asana.sanskrit_name}" %></div>
-            <div class="english"><%= "#{asana.english_name}" %></div>
-            <div class="helper delete_from_seq">        
-              <%= link_to "(x)", remove_asana_sequence_path(@sequence, asana_id: asana.id), method: :post %>
-            </div>
-
-          </div>
-        </div>
-    <% end %>
+  <%= react_component('SequenceSelector',
+                  { initialAsanas: @asanas},
+                  { prerender: true }) %>
 
 </div>

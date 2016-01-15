@@ -1,14 +1,13 @@
 <div class="container">
 
   <% if notice || alert %>
-		<p class="notifs">
-			<div class="notice"><%= notice %></div>
-      <div class="alert"><%= alert %></div>
-    </p>
+    <div class="notifs">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
   <% end %>
-
-<%= react_component('YourAsanasList',
-                    { initialAsanas: @your_asanas },
-                    { prerender: true }) %>
+	<%= react_component('YourAsanasList',
+	                    { initialAsanas: @your_asanas },
+	                    { prerender: true }) %>
 
 </div>
