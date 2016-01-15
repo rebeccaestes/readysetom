@@ -5,13 +5,18 @@
 
     <h3>
       <% if current_user %>
-      <div class="notifs">
-        <a href="/sequences" class="btn btn-lg btn-primary btn-learn">Get started &raquo;</a>
+        <a href="/sequences" class="btn btn-lg btn-primary btn-learn btn-home">Get started &raquo;</a>
       <% else %>
-   			 <a href="/sequences" class="btn btn-lg btn-primary btn-learn">Sign up to get started!</a>
-      </div>
+   			 <a href="/sequences" class="btn btn-lg btn-primary btn-learn btn-home">Sign up to get started!</a>
       <% end %>
     </h3>
+
+    <% if notice || alert %>
+      <div class="notifs">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
 		
 		   <%= image_tag("om_calligraphy.svg", :alt => "om", :class => "om_img") %>
 
