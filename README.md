@@ -23,4 +23,4 @@ In future iterations, I'd like to:
 * Better restrict non-users' viewing access (right now I did this by just not giving them all the links ...)
 * Generally React-ify the project ... although I'm not sure how plausible that would be without completely restructuring it.
 
-While building the data for this project, I also created <a href="http://github.com/rebeccaestes/yoga_api">what may be the only public yoga API in existence</a>. (I searched for quite a while, and found nothing.)
+While building the data for this project, I also created <a href="http://github.com/rebeccaestes/yoga_api">what may be the only public yoga API in existence</a>.
