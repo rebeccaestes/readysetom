@@ -5,6 +5,7 @@ Technologies used include:
 * PostgreSQL for the data
 * Devise for account authorization
 * Customized Bootstrap for the CSS
+* Dropbox to host the icons, which I got from The Noun Project
 * jQuery UI Sortable plugin for the drag-and-drop functionality
 
 React and Rails were integrated with the <a href="https://github.com/reactjs/react-rails">react-rails gem</a>. In retrospect, Node would have been an easier integration, but Olivier Lance's <a href="https://medium.com/technically-speaking/isomorphic-reactjs-app-with-ruby-on-rails-part-1-server-side-rendering-8438bbb1ea1c#.ucoexco93">tutorial series</a> was a big help in implementing.
