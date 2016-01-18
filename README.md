@@ -11,7 +11,7 @@ Technologies used include:
 
 To-do list:
 * Actually save order changes in sequences
-* Get rid of drop-down menus, and instead be add asanas to your sequence by clicking on them
+* Get rid of drop-down menus, and instead add asanas to your sequence by clicking on them
 * Search-box plugin for asanas on the sequence page
 * Allow users the option to publicly share their sequences and custom asanas
 * Ability to favorite/star another user's sequences
