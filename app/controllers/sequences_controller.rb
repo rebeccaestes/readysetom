@@ -69,13 +69,17 @@ class SequencesController < ApplicationController
 
   def add_asana
     @sequence = Sequence.find(params[:id])
-    @sequence.sequence_entries.create(asana_id: params[:asana_id], order: @sequence.sequence_entries.length + 1)
+    if @sequence.sequence_entries.length == 0 
+      @sequence.sequence_entries.create(asana_id: params[:asana_id], order: 1)
+    else
+      @sequence.sequence_entries.create(asana_id: params[:asana_id], order: @sequence.sequence_entries.last.order + 1)
+    end
     redirect_to @sequence
   end
 
   def remove_asana
     @sequence = Sequence.find(params[:id])
-    entries = @sequence.sequence_entries.find_by(asana_id: params[:asana_id]).destroy
+    @sequence.sequence_entries.find(params[:seq_id]).destroy
     redirect_to @sequence
   end
 

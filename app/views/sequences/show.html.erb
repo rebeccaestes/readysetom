@@ -19,10 +19,10 @@
           <%= image_tag @asanas_in_seq.find(entry.asana_id).img_url, 
           alt:"#{@asanas_in_seq.find(entry.asana_id).sanskrit_name}" %>
           <div class="card-text">
-            <div class="sanskrit"><%= "#{@asanas_in_seq.find(entry.asana_id) .sanskrit_name}" %></div>
+            <div class="sanskrit"><%= "#{@asanas_in_seq.find(entry.asana_id) .sanskrit_name}" %> id: <%= @asanas_in_seq.find(entry.asana_id).id %></div>
             <div class="english"><%= "#{@asanas_in_seq.find(entry.asana_id) .english_name}" %></div>
             <div class="helper delete_from_seq">        
-              <%= link_to "(x)", remove_asana_sequence_path(@sequence, asana_id: @asanas_in_seq.find(entry.asana_id).id), method: :post %>
+              <%= link_to "(x)", remove_asana_sequence_path(@sequence, seq_id: entry.id), method: :post %>
       
             </div>
           </div>
