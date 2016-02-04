@@ -4,13 +4,13 @@
 
   <span class="hidden-id"><%= @sequence.id %></span>
 
-    <% if @sequence.public == true %>
-      <p class="instructions">This sequence is <strong>public</strong>. You can change that in the <%= link_to "sequence options", edit_sequence_path(@sequence) %>.</p>
-    <% else %>
-      <p class="instructions">This sequence is <strong>private</strong>. You can change that in the <%= link_to "sequence options", edit_sequence_path(@sequence) %>.</p>
-    <% end %>
+    <% if @seq_owner == current_user %>
+      <% if @sequence.public == true %>
+        <p class="instructions">This sequence is <strong>public</strong>. You can change that in the <%= link_to "sequence options", edit_sequence_path(@sequence) %>.</p>
+      <% else %>
+        <p class="instructions">This sequence is <strong>private</strong>. You can change that in the <%= link_to "sequence options", edit_sequence_path(@sequence) %>.</p>
+      <% end %>
 
-    <% if @sequence.user == current_user %>
       <p>These are the asanas in your sequence. Drag and drop them to reorder.</p>
 
       <div id="sequence_asanas">
