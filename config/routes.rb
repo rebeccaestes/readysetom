@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   patch '/sequences/:id', to: 'sequences#update'
 
+  patch '/sequences/:seq_id/edit_entry/:entry_id', to: 'sequences#edit_entry', as: 'edit_entry'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

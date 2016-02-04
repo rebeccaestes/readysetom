@@ -72,6 +72,8 @@ var SequenceSorter = React.createClass({
   componentDidMount: function() {
     $( "#sequence_asanas" ).sortable();
 
+    // add Save button, on click iterate through $("#sequence_asanas .current_sequence"), grab name, reassign id to each? OR assign sequence_id ...
+
     // $.getJSON('/urltowherever', function(varForData) {
     //   if (this.isMounted()) {
     //     this.setState({

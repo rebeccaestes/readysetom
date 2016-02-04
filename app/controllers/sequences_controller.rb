@@ -61,9 +61,15 @@ class SequencesController < ApplicationController
   #   redirect_to your_asanas_path, notice: "Asana deleted!"
   # end
 
+  def edit_entry
+    @sequence = Sequence.find(params[:seq_id])
+    this_entry = @sequence.sequence_entries.find_by(asana_id: params[:asana_id]).update(order: order - 1)
+
+  end
+
   def add_asana
     @sequence = Sequence.find(params[:id])
-    @sequence.sequence_entries.create(asana_id: params[:asana_id])
+    @sequence.sequence_entries.create(asana_id: params[:asana_id], order: @sequence.sequence_entries.length + 1)
     redirect_to @sequence
   end
 

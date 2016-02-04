@@ -1,7 +1,5 @@
 <div class="container">
 
-<%= @seq_entries.last.id %>
-
   <h2 id="sequence_header"><%= @sequence.name %></h2>
 
   <% if @sequence.user == current_user %>
@@ -13,6 +11,8 @@
 
     <div id="sequence_asanas">
 
+      <!-- Sort from lowest @seq_entries.id to highest. Grab asana_id from that @seq_entries, and display. -->
+
       <% @seq_entries.each do |entry| %>
 
         <div class="asana-card your-asana-card">
@@ -23,6 +23,7 @@
             <div class="english"><%= "#{@asanas_in_seq.find(entry.asana_id) .english_name}" %></div>
             <div class="helper delete_from_seq">        
               <%= link_to "(x)", remove_asana_sequence_path(@sequence, asana_id: @asanas_in_seq.find(entry.asana_id).id), method: :post %>
+      
             </div>
           </div>
           </div>
