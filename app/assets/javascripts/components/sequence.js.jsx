@@ -104,7 +104,7 @@ var AsanaSearch = React.createClass({
 
   componentDidMount: function() {
     $('#search').hideseek();
-        console.log('mounted')
+    console.log($('#search'));
   },
 
   render: function() {
