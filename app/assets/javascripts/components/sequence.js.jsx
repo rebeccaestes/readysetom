@@ -55,7 +55,7 @@ var SequenceSelector = React.createClass({
         </div>
       </div>
     );
-  },
+  }
 
 })
 
@@ -95,7 +95,24 @@ var SequenceSorter = React.createClass({
 
 
   render: function() {
-    return <p> Drag and drop the asanas to reorder them.</p>
+    return (<p></p>);
+  }
+
+})
+
+var AsanaSearch = React.createClass({
+
+  componentDidMount: function() {
+    $('#search').hideseek();
+        console.log('mounted')
+  },
+
+  render: function() {
+    return (
+    <p>
+      <input id="search" name="search" placeholder="Search" type="text" data-toggle="hideseek" data-list=".searchable" />
+    </p>
+    );
   }
 
 })

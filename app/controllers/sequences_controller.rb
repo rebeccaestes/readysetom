@@ -7,9 +7,6 @@ class SequencesController < ApplicationController
     @public_sequences = Sequence.where(public: true)
 	end
 
-  def show_public
-  end
-
 	def show
 		@current_user = current_user
 		@sequence = Sequence.find(params[:id])
@@ -26,6 +23,17 @@ class SequencesController < ApplicationController
 
   def new
     @sequence = Sequence.new
+  end
+
+  def edit 
+    @sequence = Sequence.find(params[:id])
+  end
+
+  def update
+    @current_user = current_user
+    @sequence = Sequence.find(params[:id])
+    @sequence.update(sequence_params)
+    redirect_to sequence_path(params[:id]), notice: "Sequence edited."
   end
 
   def create

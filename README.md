@@ -1,4 +1,5 @@
 
+
 Technologies used include:
 * React to generate (most of) the views
 * Ruby on Rails on the backend
@@ -11,9 +12,7 @@ Technologies used include:
 
 To-do list:
 * Actually save order changes in sequences
-* Get rid of drop-down menus, and instead add asanas to your sequence by clicking on them
 * Search-box plugin for asanas on the sequence page
-* Allow users the option to publicly share their sequences and custom asanas
 * Ability to favorite/star another user's sequences
 * Generally React-ify the project
 

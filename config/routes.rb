@@ -12,9 +12,12 @@ Rails.application.routes.draw do
 
   resources :asanas
 
-  # get 'asanas/your_asanas', to: 'asanas#your_asanas'
   get 'your_asanas', to: 'asanas#your_asanas'
   get 'public_sequences', to: 'sequences#show_public'
+
+  get '/sequences/:id/edit', to: 'sequences#edit', as: "edit_sequence"
+
+  patch '/sequences/:id', to: 'sequences#update'
 
 
 

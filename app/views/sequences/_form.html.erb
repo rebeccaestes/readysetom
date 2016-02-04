@@ -1,0 +1,10 @@
+<%= form_for(@sequence) do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %><br />
+  <%= f.check_box :public %>
+	<%= f.label :public, "Yes, make this sequence public" %>
+	<br />
+	<%= f.submit 'Save', class: 'enter' %>
+
+<% end %>
