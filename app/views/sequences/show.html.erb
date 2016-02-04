@@ -2,48 +2,73 @@
 
   <h2 id="sequence_header"><%= @sequence.name %> Sequence</h2>
 
-  <%= react_component('SequenceSorter') %>
+  <% if @sequence.user == current_user %>
 
-  <div id="sequence_asanas">
+    <%= react_component('SequenceSorter') %>
 
-    <% @asanas_in_seq.each do |asana| %>
-      <div class="asana-card your-asana-card">
-        <%= image_tag asana.img_url, alt:"#{asana.sanskrit_name}" %>
-          <div class="card-text">
-            <div class="sanskrit"><%= "#{asana.sanskrit_name}" %></div>
-            <div class="english"><%= "#{asana.english_name}" %></div>
-            <div class="helper delete_from_seq">        
-              <%= link_to "(x)", remove_asana_sequence_path(@sequence, asana_id: asana.id), method: :post %>
+    <div id="sequence_asanas">
+
+      <% @asanas_in_seq.each do |asana| %>
+        <div class="asana-card your-asana-card">
+          <%= image_tag asana.img_url, alt:"#{asana.sanskrit_name}" %>
+            <div class="card-text">
+              <div class="sanskrit"><%= "#{asana.sanskrit_name}" %></div>
+              <div class="english"><%= "#{asana.english_name}" %></div>
+              <div class="helper delete_from_seq">        
+                <%= link_to "(x)", remove_asana_sequence_path(@sequence, asana_id: asana.id), method: :post %>
+              </div>
             </div>
-
           </div>
-        </div>
+      <% end %>
+
+    </div>
+
+    <fieldset>
+      <h3>Add from App Asanas</h3>
+      <%= form_tag(add_asana_sequence_path(@sequence)) do %>
+        <%= label_tag "Asana" %>
+        <%= select_tag(:asana_id, options_for_select(Asana.where(user: 1).map{|a| ["#{a.sanskrit_name} (#{a.english_name})", a.id]})) %>
+        <%= submit_tag "Add Asana" %>
+      <% end %>
+    </fieldset>
+
+    <fieldset>
+      <h3>Add from Your Asanas</h3>
+        <p>Or <%= link_to 'create a new asana', new_asana_path %>, if you like.</p>
+
+      <% if Asana.where(user: @current_user).length > 0 %>
+        <%= form_tag(add_asana_sequence_path(@sequence)) do %>
+          <%= label_tag "Asana" %>
+          <%= select_tag(:asana_id, options_for_select(Asana.where(user: @current_user).map{|a| ["#{a.sanskrit_name} (#{a.english_name})", a.id]})) %>
+          <%= submit_tag "Add Asana" %>
+          <% end %>
+    </fieldset>
+
     <% end %>
 
-  </div>
+    <hr />
 
-  <fieldset>
-    <h3>Add from App Asanas</h3>
-    <%= form_tag(add_asana_sequence_path(@sequence)) do %>
-      <%= label_tag "Asana" %>
-      <%= select_tag(:asana_id, options_for_select(Asana.where(user: 1).map{|a| ["#{a.sanskrit_name} (#{a.english_name})", a.id]})) %>
-      <%= submit_tag "Add Asana" %>
-    <% end %>
-  </fieldset>
+    <%= react_component('SequenceSelector',
+                    { initialAsanas: @asanas},
+                    { prerender: true }) %>
+  <% else %>
 
-  <fieldset>
-    <h3>Add from Your Asanas</h3>
-    <%= form_tag(add_asana_sequence_path(@sequence)) do %>
-      <%= label_tag "Asana" %>
-      <%= select_tag(:asana_id, options_for_select(Asana.where(user: @current_user).map{|a| ["#{a.sanskrit_name} (#{a.english_name})", a.id]})) %>
-      <%= submit_tag "Add Asana" %>
-    <% end %>
-  </fieldset>
+    <h4 class="list-top">This sequence was built by <%= @seq_owner.email %>.</h4>
+    <div id="sequence_asanas">
 
-  <hr />
+      <% @asanas_in_seq.each do |asana| %>
+        <div class="asana-card">
+          <%= image_tag asana.img_url, alt:"#{asana.sanskrit_name}" %>
+            <div class="card-text">
+              <div class="sanskrit"><%= "#{asana.sanskrit_name}" %></div>
+              <div class="english"><%= "#{asana.english_name}" %></div>
+              <div class="helper delete_from_seq">        
+              </div>
+            </div>
+          </div>
+      <% end %>
 
-  <%= react_component('SequenceSelector',
-                  { initialAsanas: @asanas},
-                  { prerender: true }) %>
+    </div>
 
+  <% end %>              
 </div>

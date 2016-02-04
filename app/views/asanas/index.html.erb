@@ -1,8 +1,8 @@
 <div class="container">
 	<% if current_user %>
-	<%= react_component('AsanasListUser') %>
+		<%= react_component('AsanasListUser') %>
 	<% else %> 
-	<%= react_component('AsanasListNoUser') %>
+		<%= react_component('AsanasListNoUser') %>
 	<% end %>
 
 	<%= react_component('AsanasList',

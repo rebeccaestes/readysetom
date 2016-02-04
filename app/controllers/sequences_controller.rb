@@ -2,14 +2,26 @@ class SequencesController < ApplicationController
 
 	def index
 		@current_user = current_user
-		@sequences = Sequence.where(user: @current_user)
+		@user_sequences = Sequence.where(user: @current_user)
+    # @public_sequences = Sequence.all
+    @public_sequences = Sequence.where(public: true)
 	end
+
+  def show_public
+  end
 
 	def show
 		@current_user = current_user
 		@sequence = Sequence.find(params[:id])
 		@asanas = Asana.all
     @asanas_in_seq = @sequence.asanas
+    @seq_owner = @sequence.user
+
+    # respond_to do |format|
+    #   format.html { render :show}
+    #   format.json { render json: @asanas_in_seq.to_json}
+    # end
+    
 	end
 
   def new
@@ -46,7 +58,7 @@ class SequencesController < ApplicationController
 
   private
   def sequence_params
-    params.require(:sequence).permit(:name)
+    params.require(:sequence).permit(:name, :public)
   end
 
 end

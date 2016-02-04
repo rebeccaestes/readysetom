@@ -33,6 +33,10 @@ body {
   max-height: 250px;
 }
 
+body .jumbotron {
+	height: 70%;
+}
+
 .jumbotron .container {
 	position: relative;
 	padding-right: 32%;

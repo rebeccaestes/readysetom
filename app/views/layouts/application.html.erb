@@ -22,44 +22,32 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
+
           <% if current_user %>
             <a class="navbar-brand" href="/">Namaste, <%= current_user.email %>!</a>
             <button class="btn btn-success"><%= link_to 'sign out', destroy_user_session_path, :method => :delete %></button>
-            <span class="nav_buttons_menu">
-              <a href="/sequences" class="btn btn-success">Sequences</a>
-              <a href="/asanas" class="btn btn-success">Asanas</a>
-            </span>
-            </div>
+           
           <% else %>
             <a class="navbar-brand" href="/">Namaste!</a>
             <button class="btn btn-success"><%= link_to 'sign up', new_user_registration_path %></button>
-            <button class="btn btn-success"><%= link_to 'log in', new_user_session_path %></button>  
-            <span class="nav_buttons_menu">
+            <button class="btn btn-success"><%= link_to 'log in', new_user_session_path %></button> 
+          <% end %>  
+          <span class="nav_buttons_menu">
+            <a href="/sequences" class="btn btn-success">Sequences</a>
             <a href="/asanas" class="btn btn-success">Asanas</a>
-          </span>           
-            <% end %>
-          </div> 
-        </div><!--/.navbar-collapse -->
-      </div>
+          </span> 
+        </div>         
+      </div> 
     </nav>
 
-<!--       <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p> -->
-
-
-
-
- 
     <%= yield %>
 
+    <hr>
+    
+  </body>
 
-
-      <hr>
-
-      <footer>
-        <p>&copy; 2016 <a href="http://www.rebeccaestes.com">Rebecca G. Estes</a></p>
-      </footer>
-    </div> <!-- /container -->
-
+  <footer>
+    <p>&copy; 2016 <a href="http://www.rebeccaestes.com">Rebecca G. Estes</a></p>
+  </footer>
 
 </html>

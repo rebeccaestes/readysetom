@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   # get 'asanas/your_asanas', to: 'asanas#your_asanas'
   get 'your_asanas', to: 'asanas#your_asanas'
+  get 'public_sequences', to: 'sequences#show_public'
 
 
 
