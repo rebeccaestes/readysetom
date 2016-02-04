@@ -48,9 +48,17 @@ class SequencesController < ApplicationController
 
   def destroy
     @sequence = Sequence.find(params[:id])
+    @sequence.sequence_entries.destroy_all
     @sequence.destroy
-    redirect_to sequence_url
+    redirect_to sequences_path
   end
+
+  #   def destroy
+  #   @current_user = current_user
+  #   @asana = Asana.find(params[:id])
+  #   @asana.destroy
+  #   redirect_to your_asanas_path, notice: "Asana deleted!"
+  # end
 
   def add_asana
     @sequence = Sequence.find(params[:id])

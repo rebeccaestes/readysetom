@@ -1,5 +1,5 @@
 Features:
-* Full CRUD functionality for asanas, CRU functionality for sequences
+* Full CRUD functionality for asanas and sequences
 * Asanas are searchable on sequence page
 * Sequences can be set to private or public
 

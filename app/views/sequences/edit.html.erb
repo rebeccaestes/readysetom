@@ -1,7 +1,11 @@
 <div class="container">
+
 	<h2>Edit Sequence</h2>
 
 	<%= render partial: "form" %>
 
-	
+	<%= form_for @sequence, method: :delete do |f| %> 
+		<%= f.submit 'Delete', class: 'delete' %>
+	<% end %>
+
 </div>

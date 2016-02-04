@@ -1,9 +1,11 @@
 <div class="container">
+
 	<h2>Edit an asana</h2>
+	
 	<div id="new_form"><%= render partial: "form" %></div>
 
 	<%= form_for @asana, method: :delete do |f| %> 
-	<%= f.submit 'Delete!', class: 'delete' %>
+		<%= f.submit 'Delete!', class: 'delete' %>
 	<% end %>
 
 </div>

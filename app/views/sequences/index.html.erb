@@ -11,12 +11,12 @@
 	  <% end %>
 	</ul>
 
-	<h2>
-	  Your Sequences
-	  <% if current_user %>
-	  	<%= link_to "(+)", new_sequence_path %>
-	  <% end %>
-	</h2>
+	<% if current_user %>
+		<h2>
+		  Your Sequences
+		  	<%= link_to "(+)", new_sequence_path %>
+		</h2>
+	<% end %>
 
 	<ul>
 	  <% @user_sequences.each do |sequence| %>
