@@ -1,5 +1,7 @@
 <div class="container">
 
+<%= @seq_entries.last.id %>
+
   <h2 id="sequence_header"><%= @sequence.name %></h2>
 
   <% if @sequence.user == current_user %>
@@ -11,17 +13,20 @@
 
     <div id="sequence_asanas">
 
-      <% @asanas_in_seq.each do |asana| %>
+      <% @seq_entries.each do |entry| %>
+
         <div class="asana-card your-asana-card">
-          <%= image_tag asana.img_url, alt:"#{asana.sanskrit_name}" %>
-            <div class="card-text">
-              <div class="sanskrit"><%= "#{asana.sanskrit_name}" %></div>
-              <div class="english"><%= "#{asana.english_name}" %></div>
-              <div class="helper delete_from_seq">        
-                <%= link_to "(x)", remove_asana_sequence_path(@sequence, asana_id: asana.id), method: :post %>
-              </div>
+          <%= image_tag @asanas_in_seq.find(entry.asana_id).img_url, 
+          alt:"#{@asanas_in_seq.find(entry.asana_id).sanskrit_name}" %>
+          <div class="card-text">
+            <div class="sanskrit"><%= "#{@asanas_in_seq.find(entry.asana_id) .sanskrit_name}" %></div>
+            <div class="english"><%= "#{@asanas_in_seq.find(entry.asana_id) .english_name}" %></div>
+            <div class="helper delete_from_seq">        
+              <%= link_to "(x)", remove_asana_sequence_path(@sequence, asana_id: @asanas_in_seq.find(entry.asana_id).id), method: :post %>
             </div>
           </div>
+          </div>
+
       <% end %>
 
     </div>

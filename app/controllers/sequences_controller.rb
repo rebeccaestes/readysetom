@@ -13,6 +13,7 @@ class SequencesController < ApplicationController
 		@asanas = Asana.all
     @asanas_in_seq = @sequence.asanas
     @seq_owner = @sequence.user
+    @seq_entries = @sequence.sequence_entries
 
     # respond_to do |format|
     #   format.html { render :show}
