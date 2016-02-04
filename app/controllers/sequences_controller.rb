@@ -15,10 +15,10 @@ class SequencesController < ApplicationController
     @seq_owner = @sequence.user
     @seq_entries = @sequence.sequence_entries
 
-    # respond_to do |format|
-    #   format.html { render :show}
-    #   format.json { render json: @asanas_in_seq.to_json}
-    # end
+    respond_to do |format|
+      format.html { render :show}
+      format.json { render json: @seq_entries.to_json}
+    end
     
 	end
 
@@ -52,19 +52,6 @@ class SequencesController < ApplicationController
     @sequence.sequence_entries.destroy_all
     @sequence.destroy
     redirect_to sequences_path
-  end
-
-  #   def destroy
-  #   @current_user = current_user
-  #   @asana = Asana.find(params[:id])
-  #   @asana.destroy
-  #   redirect_to your_asanas_path, notice: "Asana deleted!"
-  # end
-
-  def edit_entry
-    @sequence = Sequence.find(params[:seq_id])
-    this_entry = @sequence.sequence_entries.find_by(asana_id: params[:asana_id]).update(order: order - 1)
-
   end
 
   def add_asana
