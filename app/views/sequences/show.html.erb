@@ -26,13 +26,12 @@
               <div class="seq-order-id"><%= entry.id %></div>
               <div class="sanskrit"><%= "#{@asanas_in_seq.find(entry.asana_id) .sanskrit_name}" %></div>
               <div class="english"><%= "#{@asanas_in_seq.find(entry.asana_id) .english_name}" %></div>
-              <div class="helper delete_from_seq">        
+              <div class="helper delete_from_seq">
                 <%= link_to "(x)", remove_asana_sequence_path(@sequence, seq_id: entry.id), method: :post %>
-        
               </div>
             </div>
-            </div>
-
+          </div>
+          
         <% end %>
 
        <%= react_component('SequenceSorter') %>
