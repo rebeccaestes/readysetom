@@ -38,16 +38,6 @@
 
       </div>
 
-      <fieldset>
-    
-  <!--       <% if Asana.where(user: @current_user).length > 0 %>
-          <%= form_tag(add_asana_sequence_path(@sequence)) do %>
-            <%= label_tag "Asana" %>
-            <%= select_tag(:asana_id, options_for_select(Asana.where(user: @current_user).map{|a| ["#{a.sanskrit_name} (#{a.english_name})", a.id]})) %>
-            <%= submit_tag "Add Asana" %>
-          <% end %>
-      </fieldset> -->
-
       <hr />
 
       <h3>Add Asana</h3>
@@ -55,6 +45,7 @@
       <%= react_component('AsanaSearch') %>
 
         <div id="sequence_asanas" class="searchable">
+
         <% @asanas.each do |asana| %>
           <div class="asana-card your-asana-card">
             <%= image_tag asana.img_url, alt:"#{asana.sanskrit_name}" %>
@@ -76,6 +67,7 @@
     <%= react_component('SequenceSelector',
                     { initialAsanas: @asanas},
                     { prerender: true }) %> -->
+                    
   <% else %>
 
     <h4 class="list-top">This sequence was built by <%= @seq_owner.email %>.</h4>
@@ -92,6 +84,6 @@
       <% end %>
 
     </div>
+      
 
-  <% end %>              
-</div>
+  </div>       

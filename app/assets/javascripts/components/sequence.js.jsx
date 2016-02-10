@@ -81,7 +81,6 @@ var SequenceSorter = React.createClass({
 
   render: function() {
     return (
-     
      <p></p>
       // <button className="save-order">Save</button>
       );
